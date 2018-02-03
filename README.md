@@ -3,8 +3,10 @@ For test this Demo
 2)cd angular4demo
 3)npm install
 4)ng serve
-5)Open login page and Enter email:rishabh@gmail.com , password:123456789
-6)check pagination on project menu
+5)chat-app using angular 2 but for this you would have to need of backend (node js) so please clone both folder this one and chat-app-nodejs as well
+6)firstly signup with your name
+7)login with your name
+
 
 # FitNess
 
