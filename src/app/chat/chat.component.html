@@ -1,0 +1,64 @@
+<div>
+    <button class="btn btn-primary" (click)="logout()">logout</button>
+</div>
+<div class="container">
+    <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:10px;" *ngIf="show">
+        <div class="col-xs-12 col-md-12" style="padding-bottom: 150px; margin-left: 332px;">
+        	<div class="panel panel-default">
+                <div class="panel-heading top-bar">
+                    <div class="col-md-8 col-xs-8">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Module</h3>
+                    </div>
+                    <div class="col-md-4 col-xs-4" style="text-align: right;">
+                        <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
+                        <a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
+                    </div>
+                </div>
+                <div class="panel-body msg_container_base">
+ 
+
+
+
+                    <div class="row msg_container base_receive" *ngFor="let message of messages">
+                        <div class="col-md-2 col-xs-2 avatar">
+                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                        </div>
+                        <div class="col-xs-10 col-md-10">
+                            <div class="messages msg_receive">
+                                <p> {{message.text}} </p>
+                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" [(ngModel)]="message" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary btn-sm" (click)="sendMessage()" id="btn-chat">Send</button>
+                        </span>
+                    </div>
+                </div>
+    		</div>
+        </div>
+    </div>
+    <div *ngIf="!show" class="card">
+        <h1>Please select a user for chat</h1>
+    </div>
+    <div class="btn-group dropup">
+       <table class="table">
+        <thead>
+          <tr>
+            <th>Online users</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let obj of activeUser">
+            <td><button class="btn btn-default btn-sm" (click)="enable(obj._id)">{{obj.user}}</button></td>
+          </tr>
+         
+        </tbody>
+      </table>
+     
+    </div>
+</div>

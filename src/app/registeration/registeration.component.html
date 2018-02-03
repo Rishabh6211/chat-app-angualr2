@@ -1,0 +1,36 @@
+ <div class="container py-3">
+ <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mx-auto">
+               <div class="card card-body">
+                    <p style="margin: 0px !important" [@myAwesomeAnimation]='state' (click)="animateMe()">Signup</p> 
+                    <!-- <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" *ngIf="username.error?.required && username.touched">×</a>Username is required .
+                    </div> -->
+
+                <form #registerationForm="ngForm" (ngSubmit)="registerUser()">    
+                    <fieldset>
+                    	<div class="form-group required">
+                            <input class="form-control input-lg" #username="ngModel" [(ngModel)]="user.user" placeholder="Username" name="username" type="text" required />
+                            <div class="error-block">
+                            <small *ngIf="username.errors?.required && username.touched" class="alert alert-danger"> username is required</small>
+                            </div>
+                        </div>
+                       
+                         
+                                
+                                <h6>Already have an account?   <a [routerLink]="['/login']">Login</a></h6>
+                            
+                       
+                        <input class="btn btn-lg btn-primary btn-block" value="Sign Me Up" type="submit" [disabled]="!registerationForm.valid">
+
+                        
+                    </fieldset>
+                </form>
+                </div>
+        </div>
+    </div>
+</div>
+                                
+                                
+                  

@@ -1,0 +1,13 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login.component';
+import { LoadingModule } from 'ngx-loading';
+@NgModule({
+  imports: [
+    CommonModule,
+     LoadingModule
+   
+  ],
+  declarations: [LoginComponent]
+})
+export class LoginModule { }
